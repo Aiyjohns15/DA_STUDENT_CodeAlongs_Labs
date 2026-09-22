@@ -1,5 +1,7 @@
 # Lab — Your First Day on a Data Team: Set Up a Tracked Project
 
+**Skills assessed:** Git & Version Control, Terminal / Command Line (see this lab's own `RUBRIC.md`)
+
 **Estimated time:** ~80 minutes (10 min intro · 55 min collaborative work · 15 min shareout)
 
 ## Scenario

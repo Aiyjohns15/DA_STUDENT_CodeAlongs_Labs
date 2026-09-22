@@ -1,5 +1,7 @@
 # Lab — Column-Typing & Collection-Concern Practice
 
+**Skills assessed:** Data Literacy, Critical Thinking, Curiosity (see this lab's own `RUBRIC.md`)
+
 **Estimated time:** ~100 minutes (10 min intro · 75 min collaborative work · 15 min shareout)
 
 ## Scenario
