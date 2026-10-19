@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Data Challenge: Build It Once, Use It Again
 GitBook Quest 1.2: Build It Once, Use It Again
 
@@ -6,6 +7,12 @@ HOW TO RUN
         python3 build-it-once_STUDENT.py
     If this file sits one folder below data/, run it from the folder
     above instead:  python3 build-it-once/build-it-once_STUDENT.py
+    Or make it executable once:
+        chmod +x build-it-once_STUDENT.py
+    and from then on run it directly:
+        ./build-it-once_STUDENT.py
+    The first line, #!/usr/bin/env python3 (the "shebang"), is what
+    makes ./ work. python3 <file> ignores it as a comment.
 
 THE DATA      data/rec_center_signups.txt
 
