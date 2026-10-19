@@ -43,17 +43,17 @@ SUBMIT
 ############################################################################
 
 # 1. What does one row represent?
-# Your answer:
+# Your answer: one row represtents the sign up info for each session per member
 #
 #
 
 # 2. Which fields hold numbers, and which hold text?
-# Your answer:
+# Your answer: sessions holds numbers, members and class_name holds text
 #
 #
 
 # 3. What already looks wrong, missing or inconsistent?
-# Your answer:
+# Your answer: no separation by class name
 #
 #
 
@@ -69,6 +69,7 @@ SUBMIT
 #    class: add the third field down all 13 records. Total sessions for Swim
 #    only: add that same field, but only on the records whose class is Swim.
 #    Write both in a comment before you run anything.
+# 45 total sessions, 15 total swim sessions
 # 2. Write total_sessions(records) so it adds up the sessions column across
 #    every record in records and hands the total back with return, not
 #    print.
@@ -78,17 +79,26 @@ SUBMIT
 # The arithmetic is the same arithmetic a plain loop would do. What changes
 # is that the answer comes back to you instead of going to the screen.
 
-with open("data/rec_center_signups.txt") as f:
+with open("/Users/aiyannajohnson/Documents/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/build-it-once/rec_center_signups.txt") as f:
     signups = [line for line in f.read().splitlines()
                if line and not line.startswith("#")]
 
 def total_sessions(records):
-    # TODO: add up the sessions column across every record in `records`
+    total = 0 
+    for record in records:
+        total = total + int(record.split (",")[2])
+    return total
+
+        
     # TODO: hand the total back to whoever called this. Do not print it.
-    pass
+    
+
 
 swim_only = []
 # TODO: fill swim_only with just the Swim records
+for item in signups:
+    if item.split(",")[1] == "Swim":
+            swim_only.append(item) 
 
 print("every class:", total_sessions(signups))
 print("swim only:  ", total_sessions(swim_only))
@@ -116,20 +126,27 @@ print("swim only:  ", total_sessions(swim_only))
 def count_long_bookings(records, minimum):
     # TODO: count the records whose sessions number is `minimum` or more
     # TODO: return the count
-    pass
+    count = 0
+    for record in records:
+        if int(record.split(",")[2]) <= minimum:
+            count += 1
+    return count
+
 
 def show_long_bookings(records, minimum):
     # TODO: print a sentence with the same count in it. Only print.
-    pass
+    x = count_long_bookings(records, minimum)
+    return x
+    print(f"There are", {x}, "long bookings.")
 
 print("returned:", count_long_bookings(signups, 4))
 print("returned:", count_long_bookings(signups, 2))
 
 handed_back = show_long_bookings(signups, 4)
-print("what show_long_bookings handed back:", handed_back)
+print("what show_long_bookings handed back:", handed_back) 
 
-# Your answer:
-#
+# Your answer: Count_long_bookings only returns the value while show_long_bookings put the values on the screen 
+# 
 #
 
 # ----- Share Out: Day 1 -----
@@ -178,13 +195,21 @@ print("what show_long_bookings handed back:", handed_back)
 sessions_cutoff = 4
 
 def count_reaching_outside(records):
+    count = 0
+    for record in records:
+        if int(record.split(",")[2]):
+                count += 1
+    return count
+
     # TODO: same count as count_long_bookings, but take NO minimum
     # parameter. Read sessions_cutoff from outside the function instead.
-    pass
 
-print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
+print("There are", count_reaching_outside(signups), "total sessions.")
 
-sessions_cutoff = 2
+#count_long_bookings(signups, 4)
+print(count_long_bookings(signups, 4))
+
+
 
 # TODO: call count_reaching_outside(signups) again, unchanged, and print it
 # TODO: print count_long_bookings(signups, 4) underneath for comparison
@@ -216,16 +241,25 @@ sessions_cutoff = 2
 # the steps after it can run.
 
 def log_signup(record, previous_member):
+    #previous_member = 
+    #print ("Previous:", previous_member, "| Current:", member)
+    member = record.split(",")[0]
+    print(previous_member, member) 
+    return member
+    
+
     # TODO: pull the member name out of `record`
     # TODO: print the previous member and this one on one line
     # TODO: return this member's name
-    pass
+    
 
-last_member = "nobody yet"
+previous_member = "nobody yet"
+previous_member = log_signup(signups [0], previous_member)
+previous_member = log_signup(signups [1], previous_member)
 # TODO: call log_signup on signups[0], then on signups[1], storing
 # what it returns back into last_member each time
 
-last_seen = "nobody yet"
+"""last_seen = "nobody yet" 
 
 def log_signup_broken(record):
     # Leave this body exactly as written. It is supposed to raise.
@@ -233,10 +267,11 @@ def log_signup_broken(record):
     last_seen = record.split(",")[0]
     return last_seen
 
-log_signup_broken(signups[2])
+log_signup_broken(signups[2])"""
 
 # Your answer:
-#
+""" Returns UnboundLocalError bc last_seen is assigned a value inside og the function even though it was 
+created as a global variable outside of the funtion."""
 #
 
 # ----- Share Out: Day 2 -----

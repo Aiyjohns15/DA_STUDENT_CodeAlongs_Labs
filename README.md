@@ -100,6 +100,7 @@ chmod +x Module1_Lesson1_control-flow-conditionals_STUDENT.py   # once
    only when you're stuck.
 2. Work in `<slug>_STUDENT.py`. Code goes under each step's banner; written
    answers go in the `# Your answer:` comments.
+<<<<<<< HEAD
 3. **Point your file at the data.** Every data file lives in
    `data-challenges/data/`. Organizing your own folders is part of the job:
    - **Challenges 3 and later:** the top of your `_STUDENT.py` has a line like
@@ -114,6 +115,16 @@ chmod +x Module1_Lesson1_control-flow-conditionals_STUDENT.py   # once
      ```
    A `FileNotFoundError` almost always means the path and your terminal's
    folder don't match. Check with `pwd` and `ls`.
+=======
+3. **Run it from the `data-challenges/` folder**, so the path
+   `data/<file>` points at the right place:
+   ```
+   cd module-1-python-foundations/data-challenges
+   python3 trace-the-path/trace-the-path_STUDENT.py
+   ```
+   A `FileNotFoundError` almost always means your terminal is in the wrong
+   folder. Check with `pwd`.
+>>>>>>> abf7f7b (Module 1 Days 1-4: livelabs/ + data-challenges/, .py code-alongs, README)
 4. Submit the way the overview's **Submitting Your Work** section says.
 
 ## Module 0: reading a terminal worksheet (the ` ``` ` blocks)
