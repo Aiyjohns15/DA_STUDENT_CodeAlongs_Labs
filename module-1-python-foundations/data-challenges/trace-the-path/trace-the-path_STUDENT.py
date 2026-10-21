@@ -188,7 +188,7 @@ for shift in shifts:
 checks = 0
 for volunteer in volunteers:
     # TODO: the inner loop. One pass per weekday, for each volunteer.
-    for day in None:
+    for day in days:
         checks = checks + 1
 
 print(len(volunteers), "volunteers x", len(days), "days =", checks)
