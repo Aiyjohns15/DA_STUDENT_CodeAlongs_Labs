@@ -86,7 +86,7 @@ with open("/Users/aiyannajohnson/Documents/DA_STUDENT_CodeAlongs_Labs/module-1-p
 def total_sessions(records):
     total = 0 
     for record in records:
-        total += total  int(record.split (",")[2])
+        total = total + int(record.split (",")[2])
     return total
 
         
@@ -96,9 +96,9 @@ def total_sessions(records):
 
 swim_only = []
 # TODO: fill swim_only with just the Swim records
-for xyz :
-    if 123:
-            swim_only.append()
+for item in signups:
+    if item.split(",")[1] == "Swim":
+            swim_only.append(item) 
 
 print("every class:", total_sessions(signups))
 print("swim only:  ", total_sessions(swim_only))
