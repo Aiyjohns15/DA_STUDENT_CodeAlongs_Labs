@@ -66,7 +66,7 @@ fill it in before you run the file again.
 #          happen. A: total stops existing. B: make_total() is called. C: total
 #          is created and set to 100.
 # Your answer:
-#
+
 #
 print('----- 1. Local Scope, Live -----')
 # TODO: define make_total() with a local variable total set
@@ -78,8 +78,13 @@ print('----- 1. Local Scope, Live -----')
 # Your answer:
 #
 #
-
-
+num_val = 0 #global varibale
+def make_total ():
+    total = 100 #local variable
+    return total * num_val
+    #print (total)
+x = make_total ()
+print(make_total())
 # ===== 2. Reading a Global, Live =====
 # Work out the price of a $100 item with 8% tax, using a tax rate stored
 # outside the function.
@@ -94,7 +99,14 @@ print('----- 2. Reading a Global, Live -----')
 # Your answer:
 #
 #
+tax_rate = .08 
 
+def price_with_tax(price):
+    x = price + (price * tax_rate)
+    return x
+
+print(price_with_tax(5.00))
+print(price_with_tax(100.00))
 
 # ===== 3. Refactor: Global to Parameter =====
 # Pass the tax rate in as a parameter, so the function only uses what it is
@@ -102,5 +114,4 @@ print('----- 2. Reading a Global, Live -----')
 print('----- 3. Refactor: Global to Parameter -----')
 # TODO: rewrite price_with_tax so tax_rate is a parameter
 # instead of a global it secretly reads
->>>>>>> abf7f7b (Module 1 Days 1-4: livelabs/ + data-challenges/, .py code-alongs, README)
 tax_rate = 0.08
