@@ -126,17 +126,24 @@ print("swim only:  ", total_sessions(swim_only))
 def count_long_bookings(records, minimum):
     # TODO: count the records whose sessions number is `minimum` or more
     # TODO: return the count
-    pass
+    count = 0
+    for record in records:
+        if int(record.split(",")[2]) <= minimum:
+            count += 1
+    return count
+
 
 def show_long_bookings(records, minimum):
     # TODO: print a sentence with the same count in it. Only print.
-    pass
+    x = count_long_bookings(records, minimum)
+    return x
+    print(f"There are", {x}, "long bookings.")
 
 print("returned:", count_long_bookings(signups, 4))
 print("returned:", count_long_bookings(signups, 2))
 
 handed_back = show_long_bookings(signups, 4)
-print("what show_long_bookings handed back:", handed_back)
+print("what show_long_bookings handed back:", handed_back) 
 
 # Your answer:
 #
@@ -224,7 +231,7 @@ sessions_cutoff = 2
 # This step is supposed to raise UnboundLocalError. Run it, read the
 # traceback, answer below, then put a # in front of the line that raises so
 # the steps after it can run.
-
+"""
 def log_signup(record, previous_member):
     # TODO: pull the member name out of `record`
     # TODO: print the previous member and this one on one line
@@ -244,7 +251,7 @@ def log_signup_broken(record):
     return last_seen
 
 log_signup_broken(signups[2])
-
+"""
 # Your answer:
 #
 #
