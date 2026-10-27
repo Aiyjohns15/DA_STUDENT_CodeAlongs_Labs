@@ -145,8 +145,8 @@ print("returned:", count_long_bookings(signups, 2))
 handed_back = show_long_bookings(signups, 4)
 print("what show_long_bookings handed back:", handed_back) 
 
-# Your answer:
-#
+# Your answer: Count_long_bookings only returns the value while show_long_bookings put the values on the screen 
+# 
 #
 
 # ----- Share Out: Day 1 -----
@@ -195,13 +195,21 @@ print("what show_long_bookings handed back:", handed_back)
 sessions_cutoff = 4
 
 def count_reaching_outside(records):
+    count = 0
+    for record in records:
+        if int(record.split(",")[2]):
+                count += 1
+    return count
+
     # TODO: same count as count_long_bookings, but take NO minimum
     # parameter. Read sessions_cutoff from outside the function instead.
-    pass
 
-print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
+print("There are", count_reaching_outside(signups), "total sessions.")
 
-sessions_cutoff = 2
+#count_long_bookings(signups, 4)
+print(count_long_bookings(signups, 4))
+
+
 
 # TODO: call count_reaching_outside(signups) again, unchanged, and print it
 # TODO: print count_long_bookings(signups, 4) underneath for comparison
@@ -231,18 +239,27 @@ sessions_cutoff = 2
 # This step is supposed to raise UnboundLocalError. Run it, read the
 # traceback, answer below, then put a # in front of the line that raises so
 # the steps after it can run.
-"""
+
 def log_signup(record, previous_member):
+    #previous_member = 
+    #print ("Previous:", previous_member, "| Current:", member)
+    member = record.split(",")[0]
+    print(previous_member, member) 
+    return member
+    
+
     # TODO: pull the member name out of `record`
     # TODO: print the previous member and this one on one line
     # TODO: return this member's name
-    pass
+    
 
-last_member = "nobody yet"
+previous_member = "nobody yet"
+previous_member = log_signup(signups [0], previous_member)
+previous_member = log_signup(signups [1], previous_member)
 # TODO: call log_signup on signups[0], then on signups[1], storing
 # what it returns back into last_member each time
 
-last_seen = "nobody yet"
+"""last_seen = "nobody yet" 
 
 def log_signup_broken(record):
     # Leave this body exactly as written. It is supposed to raise.
@@ -250,10 +267,11 @@ def log_signup_broken(record):
     last_seen = record.split(",")[0]
     return last_seen
 
-log_signup_broken(signups[2])
-"""
+log_signup_broken(signups[2])"""
+
 # Your answer:
-#
+""" Returns UnboundLocalError bc last_seen is assigned a value inside og the function even though it was 
+created as a global variable outside of the funtion."""
 #
 
 # ----- Share Out: Day 2 -----
@@ -299,7 +317,7 @@ log_signup_broken(signups[2])
 
 # Three function names. Everything else is yours.
 
-def sessions_in(record):
+"""def sessions_in(record):
     pass
 
 def signups_for(records, member):
@@ -307,7 +325,7 @@ def signups_for(records, member):
 
 def total_for(records, member):
     # This one should get its work done by calling the other two.
-    pass
+    pass"""
 
 # TODO: print a line per member
 
