@@ -3,7 +3,7 @@
 
 import json
 
-DATA_FILE = "station_taps.csv"  # edit the filepath with the data
+DATA_FILE = "module-1-python-foundations/data-challenges/data/station_taps.csv"  # edit the filepath with the data
 
 with open(DATA_FILE) as f:
     rows = [line.split(",") for line in f.read().splitlines() if line]
@@ -16,6 +16,15 @@ taps = rows[1:]
 
 # Step 1: Write `scan_for()` and Count Its Comparisons for Three Tap IDs
 def scan_for(tap_id, records):
+    comparisons = 0
+    for row in records:
+        comparison += 1
+        if row == tap_id:
+            retrun comparisons
+    return comparisons
+
+        
+
     # TODO: assign `comparisons` to 0
     # TODO: loop over `records`; add 1 to `comparisons` for every row
     # TODO: inside the loop, return `comparisons` when row[0] == tap_id
