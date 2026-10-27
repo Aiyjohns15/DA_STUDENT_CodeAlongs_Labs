@@ -239,7 +239,7 @@ print(count_long_bookings(signups, 4))
 # This step is supposed to raise UnboundLocalError. Run it, read the
 # traceback, answer below, then put a # in front of the line that raises so
 # the steps after it can run.
-
+"""
 def log_signup(record, previous_member):
     #previous_member = 
     #print ("Previous:", previous_member, "| Current:", member)
@@ -267,7 +267,7 @@ def log_signup_broken(record):
     last_seen = record.split(",")[0]
     return last_seen
 
-log_signup_broken(signups[2])"""
+log_signup_broken(signups[2])
 
 # Your answer:
 """ Returns UnboundLocalError bc last_seen is assigned a value inside og the function even though it was 
