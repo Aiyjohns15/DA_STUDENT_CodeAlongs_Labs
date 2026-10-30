@@ -5,7 +5,7 @@ import json
 
 DATA_FILE = "module-1-python-foundations/data-challenges/data/station_taps.csv"  # edit the filepath with the data
 
-with open(DATA_FILE) as f:
+with open("station_taps.csv") as f:
     rows = [line.split(",") for line in f.read().splitlines() if line]
 
 header = rows[0]
@@ -18,9 +18,9 @@ taps = rows[1:]
 def scan_for(tap_id, records):
     comparisons = 0
     for row in records:
-        comparison += 1
-        if row == tap_id:
-            retrun comparisons
+        comparisons += 1
+        if row[0] == tap_id:
+            return comparisons
     return comparisons
 
         
@@ -29,7 +29,7 @@ def scan_for(tap_id, records):
     # TODO: loop over `records`; add 1 to `comparisons` for every row
     # TODO: inside the loop, return `comparisons` when row[0] == tap_id
     # TODO: after the loop, return `comparisons`
-    pass
+    
 
 
 print("columns:", header)
@@ -47,6 +47,14 @@ print("comparisons to find T999:", scan_for("T999", taps))
 # Step 2: Print Scan Cost at 5 to 40 Rows, Then Count a Nested Pair Loop
 for size in [5, 10, 20, 40]:
     worst = scan_for("T999", taps[:size])
+    print("rows:", size, "| worst-case comparisons:", worst)
+pairs = 0
+for tap in taps:
+    for other_taps in taps:
+        pairs +=1
+print(len(taps), pairs)
+big = len(tap)*10
+print(worst)
     # TODO: print "rows:", `size`, "| worst-case comparisons:", `worst`
 # TODO: assign `pairs` to 0; loop over `taps` with a loop over `taps` inside
 # TODO: add 1 to `pairs` in the inner loop
@@ -60,7 +68,7 @@ for size in [5, 10, 20, 40]:
 #
 
 
-# ===== Day 2 =====
+"""# ===== Day 2 =====
 
 # Step 3: Count Taps Per Card With Two Parallel Lists, and Their Comparisons
 # TODO: assign `card_ids` to an empty list (each card, first-seen order)
@@ -149,3 +157,4 @@ print("round trip identical:", reloaded["taps_by_card"] == taps_by_card)
 #
 # Step 6, answer 2:
 #
+"""
