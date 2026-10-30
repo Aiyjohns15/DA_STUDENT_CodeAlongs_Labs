@@ -53,8 +53,9 @@ for tap in taps:
     for other_taps in taps:
         pairs +=1
 print(len(taps), pairs)
+
 big = len(tap)*10
-print(worst)
+print("worst case:", worst, "pair loops count:", big ** 2)
     # TODO: print "rows:", `size`, "| worst-case comparisons:", `worst`
 # TODO: assign `pairs` to 0; loop over `taps` with a loop over `taps` inside
 # TODO: add 1 to `pairs` in the inner loop
@@ -68,7 +69,7 @@ print(worst)
 #
 
 
-"""# ===== Day 2 =====
+# ===== Day 2 =====
 
 # Step 3: Count Taps Per Card With Two Parallel Lists, and Their Comparisons
 # TODO: assign `card_ids` to an empty list (each card, first-seen order)
@@ -79,6 +80,8 @@ print(worst)
 # TODO: if card_ids[i] == card, add 1 to tap_counts[i], set found, break
 # TODO: after the inner loop, if not found, append `card` and 1 to the lists
 
+card_ids[]
+tap_counts[]
 busiest = tap_counts.index(max(tap_counts))
 print("distinct cards:", len(card_ids))
 print("comparisons the two parallel lists needed:", comparisons)
