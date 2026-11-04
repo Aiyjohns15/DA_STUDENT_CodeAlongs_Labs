@@ -21,6 +21,8 @@ No new material today - just you, testing your own memory. You'll work through t
 *Complete the TODOs below as you work through this step.*
 
 ```bash
+mkdir financial_analysis
+ls
 # TODO: from memory, no notes - initialize a repo, create a file,
 # stage it, and check status
 ```

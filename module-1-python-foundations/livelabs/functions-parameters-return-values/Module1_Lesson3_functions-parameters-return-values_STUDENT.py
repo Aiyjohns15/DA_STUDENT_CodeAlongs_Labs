@@ -62,6 +62,11 @@ print('----- 1. Define and Call, Live -----')
 # TODO: define a function named greet that prints a welcome
 # message, then call it twice
 
+def greet():
+    print("Welcome")
+
+greet()
+greet()
 
 # ===== 2. Parameters, Live =====
 # Make greet work for anyone: pass in a name and print a personal welcome for
@@ -70,10 +75,20 @@ print('----- 2. Parameters, Live -----')
 # TODO: add a name parameter to greet, and print a
 # personalized welcome message for each of 2 names
 
+def greet(user_name):
+    print("Welcome", user_name )
+
+greet("Heather")
+greet("Michael") 
 # DISCUSS: The code is def double(n): print(n * 2), then double(5). Put the
 #          steps of that call in order. A: n becomes 5. B: the body runs. C:
 #          double gets called with 5.
 # Your answer:
+def double(n):
+    return n * 2
+result = double(7) #global variable
+print(result + 1)
+#print(double(7) + 1) would also work
 #
 #
 #

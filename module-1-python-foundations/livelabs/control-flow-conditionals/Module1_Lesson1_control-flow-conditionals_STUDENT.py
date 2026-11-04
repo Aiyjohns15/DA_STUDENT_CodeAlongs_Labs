@@ -37,15 +37,20 @@ fill it in before you run the file again.
 print('----- 1. If/Elif/Else, Live -----')
 # TODO: set temperature to any number, then write the
 # if/elif/else check yourself before revealing the answer
->>>>>>> abf7f7b (Module 1 Days 1-4: livelabs/ + data-challenges/, .py code-alongs, README)
 temperature = 71
-
-
+if temperature > 71:
+    print("Too hot!")
+elif temperature < 71:
+    print("Mucho frio!")
+else:
+    print("Just right!")
 # ===== 2. For Loop, Live =====
 # Print the four scores, one per line, so the output is 88, 92, 75, then 100.
 print('----- 2. For Loop, Live -----')
 # TODO: write a for loop that prints every value in scores
 scores = [88, 92, 75, 100]
+for item in scores:
+    print(item)
 
 
 # ===== 3. range() Generates Numbers to Loop Over =====
@@ -89,7 +94,8 @@ print('----- 3. range() Generates Numbers to Loop Over -----')
 # Your answer:
 #
 #
-
+for x in range(5):
+    print(x)
 
 # ===== 4. While Loop, Live =====
 # Count up from 0 and stop after 3, so the output is 0, 1, 2, 3 on separate
@@ -111,8 +117,11 @@ count = 0
 # Your answer:
 #
 #
+count = 0
 
-
+while count <=3:
+    print(count)
+    count = count + 1
 # ===== 5. Loop and Conditional, Together =====
 # Label each score: 90 or above gets "great job", and anything lower gets "keep
 # practicing".
@@ -121,3 +130,8 @@ print('----- 5. Loop and Conditional, Together -----')
 # if it's 90 or above, otherwise print "keep practicing"
 >>>>>>> abf7f7b (Module 1 Days 1-4: livelabs/ + data-challenges/, .py code-alongs, README)
 scores = [88, 92, 75, 100]
+for item in scores:
+    if item >=90:
+        print(item, " - Great job!")
+    else:
+        print(item, " - Keep practicing.")

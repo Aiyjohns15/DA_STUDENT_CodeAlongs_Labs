@@ -41,7 +41,7 @@ SUBMIT
 #  before you write any code. The worksheet's "The Data" section
 #  shows how to load it.
 ############################################################################
-
+ 
 # 1. What does one row represent?
 # Your answer:
 #
@@ -84,25 +84,24 @@ SUBMIT
 # If the two differ, say which line you mis-read. Do not edit the
 # prediction.
 
-with open("data/volunteer_shifts.txt") as f:
+with open("volunteer_shifts.txt") as f:
     shifts = [line for line in f.read().splitlines()
               if line and not line.startswith("#")]
 
 long_shifts = 0
 for shift in shifts:
     hours = int(shift.split(",")[2])
-    # TODO: write the test for a long shift. The coordinator counts a
-    #       shift of 4 hours or more.
-    if None:
+    # TODO: if hours >=4:  long_shifts = long_shifts +1
+    if hours >=4:
         # TODO: this is the counting line. Move long_shifts on by one.
-        long_shifts = None
+        long_shifts = long_shifts +1
 
 print("shifts of 4+ hours:", long_shifts)
 
 # Your answer:
+#prediction: 5
 #
-#
-
+  
 # ===== Step 2: Total the Week's Hours, Printing the Running Total Each Pass =====
 # You already wrote a loop that counts. This one adds up instead, and you
 # watch the variable move as it goes.
@@ -126,10 +125,10 @@ for shift in shifts:
     volunteer, day, hours = shift.split(",")
     # TODO: add this shift's hours onto the running total. Mind the
     #       type: everything that came out of that split is a string.
-    total = None
+    total += int(hours)
     # TODO: print one line per pass: the day, the volunteer, and the
     #       total so far. This printed line IS the tracing tool.
-    print(day, volunteer, "| running total:", None)
+    print(day, volunteer, "| running total:", total)
 
 print("total hours logged this week:", total)
 
