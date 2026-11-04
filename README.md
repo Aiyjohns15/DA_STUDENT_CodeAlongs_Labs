@@ -1,4 +1,4 @@
-# Data Analytics Code-Alongs & Data Challenges
+# Data Analytics Code-Alongs & Labs
 
 This is your working repo for **code-alongs** (the code you type with your
 instructor during each LiveLab) and **Data Challenges** (the hands-on
