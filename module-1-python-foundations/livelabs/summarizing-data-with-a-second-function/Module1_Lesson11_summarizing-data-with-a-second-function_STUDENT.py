@@ -28,14 +28,16 @@ fill it in before you run the file again.
 print('----- 1. Step 1: A Formatted Listing -----')
 # TODO: create a list called games of (title, players) tuples:
 # ("Chess", 4), ("Checkers", 6), ("Clue", 1), ("Uno", 8)
-
+games = [("Chess", 4), ("Checkers", 6), ("Clue", 1), ("Uno", 2)]
 
 # TODO: define summarize_batch(games) that prints one formatted
 # line per game: "{title}: {players} available"
-
+def summarize_batch(games):
+    for title,players in games:
+        print(f"{title}: {players} available")
 
 # TODO: call summarize_batch(games)
-
+summarize_batch(games)
 # PREDICT before you run: What is the third line this code prints?
 # Your answer:
 #
@@ -47,10 +49,23 @@ print('----- 1. Step 1: A Formatted Listing -----')
 # players.
 print('----- 2. Step 2: Add a Low-Availability Alert -----')
 # TODO: keep Step 1's listing loop
+def summarize_batch1(games):
+    for title,players in games:
+        if players >= 3:
+            print(f"{title}: {players}")
 # TODO: print a blank line, then "Low availability:"
+            print("Low availability")
+            print()
 # TODO: loop over games again; if players < 3, print
 # "  {title} ({players})"
+    for title,players in games:
+        if players < 3:
+# TODO: print a blank line, then "Low availability:"
+            print(f"{title}: {players} ")
+            print("Avaiable")
+            print()
 # TODO: call summarize_batch(games)
+summarize_batch1(games)
 
 # PREDICT before you run: In the games list, change Uno from 8 to 2. What
 #                         changes in the output?
@@ -66,7 +81,25 @@ print('----- 3. Step 3: Add a Total Count -----')
 # TODO: keep Step 2's listing and alert loops
 # TODO: print a blank line, then f"{len(games)} games total"
 # TODO: call summarize_batch(games)
+def summarize_batch2(games):
+    for title,players in games:
+        print(f"{title}: {players} available")
+    for title,players in games:
+        if players >= 3:
+            print(f"{title}: {players}")
+            print("Low availability")
+            print()
+    for title,players in games:
+        if players < 3:
+            # TODO: print a blank line, then "Low availability:"
+            print(f"{title}: {players} ")
+            print("Avaiable")
+            print()
+    print()
+    print(f"{len(games)} games total")
 
+games.append(("Dice", 5))        
+summarize_batch2(games)
 # PREDICT before you run: Add one more game to the games list, like ("Dice",
 #                         5). What prints last?
 # Your answer:
