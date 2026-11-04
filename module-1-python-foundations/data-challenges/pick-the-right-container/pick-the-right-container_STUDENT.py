@@ -152,13 +152,13 @@ print("taps for C001:", taps_by_card["C001"])
 
 # ===== Day 3 =====
 
-# Step 5: Save the Summary as JSON and Read the TypeError a Set Causes
+"""# Step 5: Save the Summary as JSON and Read the TypeError a Set Causes
 # TODO: replace each None with your Day 2 value; keep `stations` a set
 summary = {
     "service_day": "2026-03-02",
     "total_taps": None,
     "distinct_cards": 12,
-    "stations": None,
+    "stations": 6,
     "taps_by_card": None,
 }
 
@@ -176,7 +176,7 @@ print(text)
 #
 
 
-"""# Step 6: Write `tap_summary.json`, Reload It, and Check Which Types Survived
+# Step 6: Write `tap_summary.json`, Reload It, and Check Which Types Survived
 # TODO: assign summary["stations"] to a type JSON can hold; keep the key
 # TODO: json.dump() `summary` into a with open("tap_summary.json", "w")
 # TODO: replace None with json.load() of "tap_summary.json"
