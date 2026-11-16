@@ -38,9 +38,24 @@ SUBMIT
 
 # ===== Step 2: Decide Your Attributes, Each With a Reason From the Scenario =====
 
-# Your answer:
-#
-#
+# Your answer: Tool name - to be able to id each tool
+# Status - to know which tools are either check out, out of order, or available to use
+# Needs_check - to know if the tool needs a saftey check
+import csv
+#row 1 of csv file = header
+data = [
+    ["Tool+ID", "Status", "Saftey_Check", "Date" ]
+    ["power_drill1", "out of order", "Needs inspection"]
+    ["power_drill2", "checked out", ]
+    ["flathead1", "checked out"]
+    ["flathead2", "in house"]
+    ["phillips_head1", "in house"]
+    ["phillips_head2", "checked out"]
+    ["hammer1", "in house"]
+    ["hammer2", "in house"]
+    ["nail_gun1", "checked out"]
+    ["nail_gun2", "checked out"]
+]
 
 # ===== Step 3: Write __init__ and a Method, From Scratch =====
 # There is no single correct design here. Your class name, your attribute
