@@ -143,9 +143,6 @@ for station in fleet:
 print(van_list)
 for station in van_list:
     print(station)
-
-print(van_list)
-
 # Step 4, answer 1:
 #
 # Step 4, answer 2:
