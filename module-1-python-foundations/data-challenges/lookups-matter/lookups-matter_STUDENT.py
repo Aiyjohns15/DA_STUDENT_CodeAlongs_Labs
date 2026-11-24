@@ -9,7 +9,6 @@ CHECKINS_FILE = "door_checkins.txt"  # edit the filepath with the data
 with open(DATA_FILE, newline="") as f:
     members = list(csv.DictReader(f))
 
-
 # Step 1: Write `find_linear()` to Return the Member and Its Comparisons
 def find_linear(members, member_id):
     # TODO: assign `comparisons` to 0
@@ -17,13 +16,11 @@ def find_linear(members, member_id):
     # TODO: inside the loop, return row, comparisons on a member_id match
     # TODO: after the loop, return None, comparisons
     comparisons = 0
-    for member in members:
-        comparisons += 1
-        if row.member_id == member_id:
+    for row in members:
+        comparisons +=1 
+        if row["member_id"] == member_id:
             return row, comparisons
     return None, comparisons    
-
-
 
 row, count = find_linear(members, "M1150")
 print("members in the directory:", len(members))
@@ -31,7 +28,7 @@ print("found:", row["name"], "at", row["home_branch"])
 print("comparisons:", count)
 
 # Step 1, answer 1:
-# 150 bc the code loops through 150 rows before getting member id 150
+#
 
 
 # Step 2: Total the Comparisons for All 20 Swipes in `door_checkins.txt`
@@ -42,23 +39,16 @@ print("comparisons:", count)
 # TODO: print the ID, the name or "NOT A MEMBER", and the comparisons
 # TODO: add each count to `linear_total`
 # TODO: add 1 to `not_members` for every swipe with no row
-with open(CHECKINS_FILE) as f:
-    swipes = f.read().splitlines()
-linear_total = 0
-not_members = 0
-for member_id in swipes:
-    find_linear(members, member_id)
 
-
-print("swipes:", len(swipes), "| not members:", not_members)
+"""print("swipes:", len(swipes), "| not members:", not_members)
 print("linear total comparisons:", linear_total)
-
-# Step 2, answer 1:
+"""
+#Step 2, answer 1:
 #
 # Step 2, answer 2:
 #
 
-"""
+
 # Step 3: Build `members_by_id` and Find the Swipe Where It Pays Off
 # TODO: assign `members_by_id` to an empty dict and `build_steps` to 0
 # TODO: loop over `members`; store each row under row["member_id"]
@@ -111,4 +101,3 @@ print("VERDICT:", verdict)
 #
 # Step 4, answer 2:
 #
-"""
